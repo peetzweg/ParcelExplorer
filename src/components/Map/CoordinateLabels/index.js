@@ -3,29 +3,33 @@ import { Text, View, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
 	containerColumn: {
+		backgroundColor: '#ffffff',
 		justifyContent: 'center',
 		alignItems: 'center',
 		flexDirection: 'row'
 	},
 	containerRow: {
+		backgroundColor: '#ffffff',
 		position: 'absolute',
 		top: 0,
 		left: 0
 	},
 	columnLabel: {
 		width: 32,
+		height: 32,
 		justifyContent: 'center',
 		alignItems: 'center'
 	},
 	rowLabel: {
 		height: 32,
+		width: 32,
 		justifyContent: 'center',
-		alignItems: 'flex-start'
+		alignItems: 'center'
 	},
 	title: {
-		backgroundColor: 'transparent',
-		color: '#ffffff',
-		fontWeight: '900',
+		color: '#7D7D7D',
+		fontWeight: '500',
+		fontFamily: 'Avenir',
 		fontSize: 12
 	}
 });

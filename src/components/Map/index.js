@@ -11,22 +11,27 @@ const styles = StyleSheet.create({
 		flex: 1
 	},
 	contentContainer: {
-		height: 1600,
-		width: 1600
+		height: 1632,
+		width: 1632,
+		backgroundColor: '#ffffff'
+	},
+	parcelsContainer: {
+		marginTop: 32,
+		marginLeft: 32
 	},
 	rowLabelsContainer: {
 		position: 'absolute',
 		left: 0,
-		top: 0,
+		top: 32,
 		bottom: 0,
 		width: 100
 	},
 	columnLabelsContainer: {
 		position: 'absolute',
-		left: 0,
+		left: 32,
 		top: 0,
 		right: 0,
-		height: 30
+		height: 32
 	},
 	rowContainer: {
 		flexDirection: 'row'
@@ -49,7 +54,7 @@ const Map = ({ parcels, onParcelPress }) => (
 		contentContainerStyle={styles.contentContainer}
 		style={styles.container}
 	>
-		<ScrollViewChild scrollDirection={'both'}>
+		<ScrollViewChild scrollDirection={'both'} style={styles.parcelsContainer}>
 			<View>
 				{CORDS.yCords.map((y) => (
 					<View key={`row_${y}`} style={styles.rowContainer}>
