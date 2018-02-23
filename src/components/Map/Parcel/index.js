@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
 	}
 });
 
-export const Parcel = ({ data }) => (
+export const Parcel = ({ data, onPress }) => (
 	<TouchableOpacity
 		onPress={() => {
-			console.log(`${data.x}|${data.y} clicked`);
+			onPress(data.x, data.y);
 		}}
 	>
 		<View style={styles.container} />

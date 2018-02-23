@@ -32,39 +32,33 @@ const styles = StyleSheet.create({
 	}
 });
 
-class Map extends Component {
-	render() {
-		return (
-			<ScrollView
-				bounces={true}
-				bouncesZoom={true}
-				maximumZoomScale={1}
-				minimumZoomScale={1}
-				showsHorizontalScrollIndicator={false}
-				showsVerticalScrollIndicator={false}
-				contentContainerStyle={styles.contentContainer}
-				style={styles.container}
-			>
-				<ScrollViewChild scrollDirection={'both'}>
-					<View>
-						{range(50, -50, -1).map((y) => (
-							<View key={`row_${y}`} style={styles.rowContainer}>
-								{range(-50, 50, 1).map((x) => (
-									<Parcel key={`${x},${y}`} data={{ x, y, taken: true }} />
-								))}
-							</View>
+export const Map = ({ onParcelPress }) => (
+	<ScrollView
+		bounces={true}
+		bouncesZoom={true}
+		maximumZoomScale={1.75}
+		minimumZoomScale={0.5}
+		showsHorizontalScrollIndicator={false}
+		showsVerticalScrollIndicator={false}
+		contentContainerStyle={styles.contentContainer}
+		style={styles.container}
+	>
+		<ScrollViewChild scrollDirection={'both'}>
+			<View>
+				{range(50, -50, -1).map((y) => (
+					<View key={`row_${y}`} style={styles.rowContainer}>
+						{range(-50, 50, 1).map((x) => (
+							<Parcel key={`${x},${y}`} data={{ x, y, taken: true }} onPress={onParcelPress} />
 						))}
 					</View>
-				</ScrollViewChild>
-				<ScrollViewChild scrollDirection={'vertical'} style={styles.rowLabelsContainer}>
-					<CoordinateLabels data={range(50, -50, -1)} direction={'row'} />
-				</ScrollViewChild>
-				<ScrollViewChild scrollDirection={'horizontal'} style={styles.columnLabelsContainer}>
-					<CoordinateLabels data={range(-50, 50, 1)} direction={'column'} />
-				</ScrollViewChild>
-			</ScrollView>
-		);
-	}
-}
-
-export default Map;
+				))}
+			</View>
+		</ScrollViewChild>
+		<ScrollViewChild scrollDirection={'vertical'} style={styles.rowLabelsContainer}>
+			<CoordinateLabels data={range(50, -50, -1)} direction={'row'} />
+		</ScrollViewChild>
+		<ScrollViewChild scrollDirection={'horizontal'} style={styles.columnLabelsContainer}>
+			<CoordinateLabels data={range(-50, 50, 1)} direction={'column'} />
+		</ScrollViewChild>
+	</ScrollView>
+);

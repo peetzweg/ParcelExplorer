@@ -16,10 +16,10 @@ const styles = StyleSheet.create({
 	}
 });
 
-export const ParcelDetailed = ({ data }) => (
+export const DetailedParcelScreen = ({ data }) => (
 	<View style={styles.container}>
 		<View style={styles.top}>
-			<WebView />
+			<WebView source={{ uri: 'https://aframe.io/aframe/examples/boilerplate/hello-world/' }} />
 		</View>
 		<View style={styles.bottom}>
 			<Text>Detailed Parcel Information bla</Text>
