@@ -9,10 +9,10 @@ const styles = StyleSheet.create({
 		width: '100%'
 	},
 	top: {
-		flex: 1
+		flex: 2
 	},
 	bottom: {
-		flex: 2
+		flex: 3
 	}
 });
 

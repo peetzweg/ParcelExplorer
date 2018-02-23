@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 import ScrollView, { ScrollViewChild } from 'react-native-directed-scrollview';
 import range from 'lodash/range';
-import { Parcel } from './Parcel';
+import Parcel from './Parcel';
 import { CoordinateLabels } from './CoordinateLabels';
 
 const styles = StyleSheet.create({
@@ -10,8 +11,8 @@ const styles = StyleSheet.create({
 		flex: 1
 	},
 	contentContainer: {
-		height: 3200,
-		width: 3200
+		height: 1600,
+		width: 1600
 	},
 	rowLabelsContainer: {
 		position: 'absolute',
@@ -32,7 +33,12 @@ const styles = StyleSheet.create({
 	}
 });
 
-export const Map = ({ onParcelPress }) => (
+const CORDS = {
+	yCords: range(25, -25, -1),
+	xCords: range(-25, 25, 1)
+};
+
+const Map = ({ parcels, onParcelPress }) => (
 	<ScrollView
 		bounces={true}
 		bouncesZoom={true}
@@ -45,20 +51,31 @@ export const Map = ({ onParcelPress }) => (
 	>
 		<ScrollViewChild scrollDirection={'both'}>
 			<View>
-				{range(50, -50, -1).map((y) => (
+				{CORDS.yCords.map((y) => (
 					<View key={`row_${y}`} style={styles.rowContainer}>
-						{range(-50, 50, 1).map((x) => (
-							<Parcel key={`${x},${y}`} data={{ x, y, taken: true }} onPress={onParcelPress} />
+						{CORDS.xCords.map((x) => (
+							<Parcel
+								key={`parcel_${x},${y}`}
+								x={x}
+								y={y}
+								data={parcels[`${x},${y}`]}
+								onPress={onParcelPress}
+							/>
 						))}
 					</View>
 				))}
 			</View>
 		</ScrollViewChild>
-		<ScrollViewChild scrollDirection={'vertical'} style={styles.rowLabelsContainer}>
-			<CoordinateLabels data={range(50, -50, -1)} direction={'row'} />
-		</ScrollViewChild>
 		<ScrollViewChild scrollDirection={'horizontal'} style={styles.columnLabelsContainer}>
-			<CoordinateLabels data={range(-50, 50, 1)} direction={'column'} />
+			<CoordinateLabels data={CORDS.xCords} direction={'column'} />
+		</ScrollViewChild>
+		<ScrollViewChild scrollDirection={'vertical'} style={styles.rowLabelsContainer}>
+			<CoordinateLabels data={CORDS.yCords} direction={'row'} />
 		</ScrollViewChild>
 	</ScrollView>
 );
+
+const mapStateToProps = (state) => ({
+	parcels: state.parcels
+});
+export default connect(mapStateToProps)(Map);

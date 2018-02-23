@@ -1,10 +1,20 @@
-import { Navigation } from 'react-native-navigation';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
 
+// reducers
+import { parcels } from './src/reducers';
+
+import { Navigation } from 'react-native-navigation';
 import MapScreen from './src/screens/MapScreen';
 import { DetailedParcelScreen } from './src/screens/DetailedParcelScreen';
 
-Navigation.registerComponent('ParcelExplorer.MapScreen', () => MapScreen);
-Navigation.registerComponent('ParcelExplorer.DetailedParcelScreen', () => DetailedParcelScreen);
+console.disableYellowBox = true;
+const reducer = combineReducers({ parcels });
+const store = createStore(reducer, applyMiddleware(thunk, logger));
+Navigation.registerComponent('ParcelExplorer.MapScreen', () => MapScreen, store, Provider);
+Navigation.registerComponent('ParcelExplorer.DetailedParcelScreen', () => DetailedParcelScreen, store, Provider);
 
 // start the app
 Navigation.startSingleScreenApp({

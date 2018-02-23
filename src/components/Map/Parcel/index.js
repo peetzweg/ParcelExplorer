@@ -1,21 +1,29 @@
 import React from 'react';
 import { TouchableOpacity, View, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
+import { ParcelColors } from '../../../constants';
+import { updateParcel } from '../../../actions';
 
-const styles = StyleSheet.create({
-	container: {
-		width: 30,
-		height: 30,
-		backgroundColor: '#AFDB8C',
-		margin: 1
-	}
-});
+const style = {
+	width: 30,
+	height: 30,
+	margin: 1
+};
 
-export const Parcel = ({ data, onPress }) => (
+const Parcel = ({ x, y, data, onPress, updateParcel }) => (
 	<TouchableOpacity
 		onPress={() => {
-			onPress(data.x, data.y);
+			updateParcel(x, y);
+			onPress(x, y);
 		}}
 	>
-		<View style={styles.container} />
+		<View
+			style={{
+				...style,
+				backgroundColor: data ? (data.taken ? ParcelColors.taken : ParcelColors.unowned) : ParcelColors.loading
+			}}
+		/>
 	</TouchableOpacity>
 );
+
+export default connect(null, { updateParcel })(Parcel);
