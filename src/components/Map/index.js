@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 	}
 });
 
-class ParcelView extends Component {
+class Map extends Component {
 	render() {
 		return (
 			<ScrollView
@@ -67,4 +67,4 @@ class ParcelView extends Component {
 	}
 }
 
-export default ParcelView;
+export default Map;
