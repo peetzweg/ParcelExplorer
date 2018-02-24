@@ -20,10 +20,16 @@ const Parcel = ({ x, y, data, onPress, updateParcel }) => (
 		<View
 			style={{
 				...style,
-				backgroundColor: data ? (data.taken ? ParcelColors.taken : ParcelColors.unowned) : ParcelColors.loading
+				backgroundColor: data.data
+					? data.data.taken ? ParcelColors.taken : ParcelColors.unowned
+					: ParcelColors.loading
 			}}
 		/>
 	</TouchableOpacity>
 );
+
+Parcel.defaultProps = {
+	data: {}
+};
 
 export default connect(null, { updateParcel })(Parcel);
