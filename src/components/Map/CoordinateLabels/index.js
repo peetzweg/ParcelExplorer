@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
 	title: {
 		color: '#7D7D7D',
 		fontWeight: '500',
-		fontFamily: 'Avenir',
+		fontFamily: 'SourceSansPro-Light',
 		fontSize: 12
 	}
 });

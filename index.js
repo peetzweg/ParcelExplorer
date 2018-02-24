@@ -23,7 +23,7 @@ Navigation.startSingleScreenApp({
 		title: 'MAP', // title of the screen as appears in the nav bar (optional)
 		navigatorStyle: {
 			navBarTextColor: '#000000',
-			navBarTextFontFamily: 'Avenir',
+			navBarTextFontFamily: 'SourceSansPro-Bold',
 			navBarTextFontSize: 18,
 			navBarButtonColor: '#3CD6AA',
 			navBarBackgroundColor: '#FCFCFC'
