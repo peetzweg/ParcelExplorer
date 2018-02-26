@@ -14,7 +14,7 @@ import { parcels } from './src/reducers';
 // Navigation
 import { Navigation } from 'react-native-navigation';
 import MapScreen from './src/screens/MapScreen';
-import { DetailedParcelScreen } from './src/screens/DetailedParcelScreen';
+import DetailedParcelScreen from './src/screens/DetailedParcelScreen';
 
 console.disableYellowBox = true;
 

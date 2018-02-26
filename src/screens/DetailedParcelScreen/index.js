@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { StyleSheet, View, WebView, Text } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -16,19 +17,19 @@ const styles = StyleSheet.create({
 	}
 });
 
-const DetailedParcelScreen = ({ x, y }) => (
+const DetailedParcelScreen = ({ x, y, parcel }) => (
 	<View style={styles.container}>
 		<View style={styles.top}>
 			<WebView source={{ uri: 'https://aframe.io/aframe/examples/boilerplate/hello-world/' }} />
 		</View>
 		<View style={styles.bottom}>
-			<Text>{`this is ${x},${y}`}</Text>
+			<Text>{parcel ? `${parcel.owner}` : `this is ${x},${y}`}</Text>
 		</View>
 	</View>
 );
 
-DetailedParcelScreen.defaultProps = {
-	data: {}
-};
+const mapStateToProps = (state, ownProps) => ({
+	parcel: state.parcels[`${ownProps.x},${ownProps.y}`]
+});
 
-export { DetailedParcelScreen };
+export default connect(mapStateToProps)(DetailedParcelScreen);

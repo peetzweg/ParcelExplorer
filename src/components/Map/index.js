@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { connect } from 'react-redux';
 import ScrollView, { ScrollViewChild } from 'react-native-directed-scrollview';
 import range from 'lodash/range';
 import Parcel from './Parcel';
@@ -43,7 +42,7 @@ const CORDS = {
 	xCords: range(-25, 25, 1)
 };
 
-const Map = ({ parcels, onParcelPress }) => (
+export const Map = ({ parcels, onParcelPress }) => (
 	<ScrollView
 		bounces={true}
 		bouncesZoom={true}
@@ -79,8 +78,3 @@ const Map = ({ parcels, onParcelPress }) => (
 		</ScrollViewChild>
 	</ScrollView>
 );
-
-const mapStateToProps = (state) => ({
-	parcels: state.parcels
-});
-export default connect(mapStateToProps)(Map);
