@@ -6,7 +6,9 @@ export default class MapScreen extends Component {
 	_openDetailedParcelScreen = (x, y) => {
 		this.props.navigator.push({
 			screen: 'ParcelExplorer.DetailedParcelScreen',
-			title: `PARCEL ${x},${y}`
+			title: `PARCEL ${x},${y}`,
+			backButtonTitle: '',
+			passProps: { x, y }
 		});
 	};
 

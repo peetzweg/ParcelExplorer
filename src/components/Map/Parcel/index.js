@@ -10,23 +10,31 @@ const style = {
 	margin: 1
 };
 
-const Parcel = ({ x, y, data, onPress, updateParcel }) => (
-	<TouchableOpacity
-		onPress={() => {
-			updateParcel(x, y);
-			onPress(x, y);
-		}}
-	>
+const Parcel = ({ x, y, data, onPress, updateParcel }) => {
+	const parcel = (
 		<View
 			style={{
 				...style,
-				backgroundColor: data.data
-					? data.data.taken ? ParcelColors.taken : ParcelColors.unowned
-					: ParcelColors.loading
+				backgroundColor: data.state ? ParcelColors[data.state] : ParcelColors.loading
 			}}
 		/>
-	</TouchableOpacity>
-);
+	);
+	const isInfrastructure = data.state ? data.state === 'road' || data.state === 'plaza' : false;
+	if (isInfrastructure) {
+		return parcel;
+	} else {
+		return (
+			<TouchableOpacity
+				onPress={() => {
+					updateParcel(x, y);
+					onPress(x, y);
+				}}
+			>
+				{parcel}
+			</TouchableOpacity>
+		);
+	}
+};
 
 Parcel.defaultProps = {
 	data: {}
