@@ -14,9 +14,23 @@ class ParcelExplorerAPI {
 				}).then((response) => {
 					resolve(response.data);
 				});
+				// TODO reject
 			});
 		}
 		return Promise.resolve();
+	}
+
+	getLastTransfers() {
+		return new Promise((resolve, reject) => {
+			Axios.get(`${ParcelExplorerServer}/land_transfers`, {
+				params: {
+					'$sort[block]': -1
+				}
+			}).then((response) => {
+				resolve(response.data.data);
+			});
+			// TODO reject
+		});
 	}
 }
 
