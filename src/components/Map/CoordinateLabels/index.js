@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
 
 export const CoordinateLabels = ({ data, direction }) => (
 	<View style={direction === 'column' ? styles.containerColumn : styles.containerRow} pointerEvents={'box-none'}>
+		{direction === 'column' ? <View style={styles.columnLabel} pointerEvents={'box-none'} /> : null}
 		{data.map((index) => (
 			<View
 				key={`${direction}_${index}`}

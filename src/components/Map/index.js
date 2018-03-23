@@ -5,13 +5,28 @@ import range from 'lodash/range';
 import Parcel from './Parcel';
 import { CoordinateLabels } from './CoordinateLabels';
 
+const SIZE = 110;
+const CORDS = {
+	yCords: range(SIZE / 2, -SIZE / 2, -1),
+	xCords: range(-SIZE / 2, SIZE / 2, 1)
+};
+
 const styles = StyleSheet.create({
 	container: {
-		flex: 1
+		flex: 1,
+		backgroundColor: '#ffffff'
+	},
+	topLeftCorner: {
+		position: 'absolute',
+		left: 0,
+		width: 32,
+		height: 32,
+		backgroundColor: '#ffffff',
+		zIndex: 1
 	},
 	contentContainer: {
-		height: 1632,
-		width: 1632,
+		height: SIZE * 32 + 32,
+		width: SIZE * 32 + 32,
 		backgroundColor: '#ffffff'
 	},
 	parcelsContainer: {
@@ -27,7 +42,7 @@ const styles = StyleSheet.create({
 	},
 	columnLabelsContainer: {
 		position: 'absolute',
-		left: 32,
+		left: 0,
 		top: 0,
 		right: 0,
 		height: 32
@@ -37,17 +52,12 @@ const styles = StyleSheet.create({
 	}
 });
 
-const CORDS = {
-	yCords: range(25, -25, -1),
-	xCords: range(-25, 25, 1)
-};
-
 export const Map = ({ parcels, onParcelPress }) => (
 	<ScrollView
 		bounces={true}
 		bouncesZoom={true}
 		maximumZoomScale={1.75}
-		minimumZoomScale={0.5}
+		minimumZoomScale={0.25}
 		showsHorizontalScrollIndicator={false}
 		showsVerticalScrollIndicator={false}
 		contentContainerStyle={styles.contentContainer}
@@ -70,11 +80,11 @@ export const Map = ({ parcels, onParcelPress }) => (
 				))}
 			</View>
 		</ScrollViewChild>
-		<ScrollViewChild scrollDirection={'horizontal'} style={styles.columnLabelsContainer}>
-			<CoordinateLabels data={CORDS.xCords} direction={'column'} />
-		</ScrollViewChild>
 		<ScrollViewChild scrollDirection={'vertical'} style={styles.rowLabelsContainer}>
 			<CoordinateLabels data={CORDS.yCords} direction={'row'} />
+		</ScrollViewChild>
+		<ScrollViewChild scrollDirection={'horizontal'} style={styles.columnLabelsContainer}>
+			<CoordinateLabels data={CORDS.xCords} direction={'column'} />
 		</ScrollViewChild>
 	</ScrollView>
 );
