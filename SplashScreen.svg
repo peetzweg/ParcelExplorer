@@ -17,8 +17,8 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    inkscape:export-filename="/Users/mnml/git/ParcelExplorer/SplashScreenRaw.png"
-   inkscape:export-xdpi="397.44"
-   inkscape:export-ydpi="397.44"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
    sodipodi:docname="SplashScreen.svg">
   <defs
      id="defs4">
@@ -79,10 +79,12 @@
     <rect
        style="opacity:1;fill:#fcfcfc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4201"
-       width="1242"
+       width="2208"
        height="2208"
-       x="0"
-       y="-1155.6378" />
+       x="-483"
+       y="-1155.6378"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <g
        id="g4413"
        transform="matrix(3.2847185,0,0,3.2847185,-194.99721,-2751.8342)">
