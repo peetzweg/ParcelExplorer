@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { StyleSheet, View, WebView, FlatList, Text } from 'react-native';
 import { Transfer } from '../../components/Transfer';
 import { requestLastTransfers } from '../../actions';
+import Headline from '../../components/Headline';
 
 const styles = StyleSheet.create({
 	container: {
@@ -10,12 +11,6 @@ const styles = StyleSheet.create({
 		display: 'flex',
 		height: '100%',
 		width: '100%'
-	},
-	top: {
-		flex: 2
-	},
-	bottom: {
-		flex: 3
 	}
 });
 
@@ -31,7 +26,12 @@ class LastTransfersScreen extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<FlatList data={this.props.transfers} renderItem={({ item }) => <Transfer transfer={item} />} />
+				<FlatList
+					ListHeaderComponent={<Headline>{'Last Transfers'}</Headline>}
+					initialNumToRender={15}
+					data={this.props.transfers}
+					renderItem={({ item, index }) => <Transfer transfer={item} color={index % 2 === 1} />}
+				/>
 			</View>
 		);
 	}
