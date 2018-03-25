@@ -37,8 +37,6 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string/>
-	
-	
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -67,6 +65,9 @@
 		<string>SourceSansPro-Regular.otf</string>
 		<string>SourceSansPro-Semibold.otf</string>
 		<string>SourceSansPro-SemiboldIt.otf</string>
+		<string>FiraMono-Bold.otf</string>
+		<string>FiraMono-Medium.otf</string>
+		<string>FiraMono-Regular.otf</string>
 	</array>
 </dict>
 </plist>

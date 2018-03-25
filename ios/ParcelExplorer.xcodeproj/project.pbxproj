@@ -36,6 +36,9 @@
 		569F7EF747E34FAF9128AA7A /* SourceSansPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A69F0510253E43C18347639A /* SourceSansPro-Regular.otf */; };
 		745AAB882B654751BDD47FBF /* SourceSansPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F03DE2AB728C44E3B7AB9D96 /* SourceSansPro-Semibold.otf */; };
 		EB945A681F784524BB932981 /* SourceSansPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = B2D5548B81914B8EAB9A3CAC /* SourceSansPro-SemiboldIt.otf */; };
+		604DC1DACB374C1096A985B0 /* FiraMono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61B3E173433446EE8D5773B2 /* FiraMono-Bold.otf */; };
+		D7978F2792C0447FA5ECFEC2 /* FiraMono-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D22CB2C083AD40D5B4A2E78C /* FiraMono-Medium.otf */; };
+		6175726D0BB24DF2984D19E2 /* FiraMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AF336F2A42843B3964EF738 /* FiraMono-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -353,6 +356,9 @@
 		A69F0510253E43C18347639A /* SourceSansPro-Regular.otf */ = {isa = PBXFileReference; name = "SourceSansPro-Regular.otf"; path = "../assets/fonts/SourceSansPro-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		F03DE2AB728C44E3B7AB9D96 /* SourceSansPro-Semibold.otf */ = {isa = PBXFileReference; name = "SourceSansPro-Semibold.otf"; path = "../assets/fonts/SourceSansPro-Semibold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		B2D5548B81914B8EAB9A3CAC /* SourceSansPro-SemiboldIt.otf */ = {isa = PBXFileReference; name = "SourceSansPro-SemiboldIt.otf"; path = "../assets/fonts/SourceSansPro-SemiboldIt.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		61B3E173433446EE8D5773B2 /* FiraMono-Bold.otf */ = {isa = PBXFileReference; name = "FiraMono-Bold.otf"; path = "../assets/fonts/FiraMono-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D22CB2C083AD40D5B4A2E78C /* FiraMono-Medium.otf */ = {isa = PBXFileReference; name = "FiraMono-Medium.otf"; path = "../assets/fonts/FiraMono-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6AF336F2A42843B3964EF738 /* FiraMono-Regular.otf */ = {isa = PBXFileReference; name = "FiraMono-Regular.otf"; path = "../assets/fonts/FiraMono-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -625,6 +631,9 @@
 				A69F0510253E43C18347639A /* SourceSansPro-Regular.otf */,
 				F03DE2AB728C44E3B7AB9D96 /* SourceSansPro-Semibold.otf */,
 				B2D5548B81914B8EAB9A3CAC /* SourceSansPro-SemiboldIt.otf */,
+				61B3E173433446EE8D5773B2 /* FiraMono-Bold.otf */,
+				D22CB2C083AD40D5B4A2E78C /* FiraMono-Medium.otf */,
+				6AF336F2A42843B3964EF738 /* FiraMono-Regular.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1036,6 +1045,9 @@
 				569F7EF747E34FAF9128AA7A /* SourceSansPro-Regular.otf in Resources */,
 				745AAB882B654751BDD47FBF /* SourceSansPro-Semibold.otf in Resources */,
 				EB945A681F784524BB932981 /* SourceSansPro-SemiboldIt.otf in Resources */,
+				604DC1DACB374C1096A985B0 /* FiraMono-Bold.otf in Resources */,
+				D7978F2792C0447FA5ECFEC2 /* FiraMono-Medium.otf in Resources */,
+				6175726D0BB24DF2984D19E2 /* FiraMono-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1087,7 +1099,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-        ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = FCL75KKM67;
@@ -1112,7 +1124,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-        ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FCL75KKM67;
 				HEADER_SEARCH_PATHS = (
